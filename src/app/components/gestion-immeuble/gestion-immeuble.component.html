@@ -1,0 +1,84 @@
+<div class="container spacer">
+  <div class="card border-primary w-c">
+    <nav class="navbar bg-light">
+      <form class="container-fluid" role="search">
+        <div class="input-group">
+          <button
+            mat-raised-button
+            class="btn button br"
+            routerLink="/ajouterImmeuble"
+          >
+            Ajouter un immeuble
+          </button>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Le nom de L'immeuble"
+            name="motCle"
+            aria-describedby="basic-addon1"
+            [(ngModel)]="motCle"
+          />
+          <a class="td point" (click)="search()">
+            <span class="input-group-text" id="basic-addon1">Chercher</span>
+          </a>
+        </div>
+      </form>
+    </nav>
+    <div class="card card-header" class="fs-2 text-white bg-primary">
+      Liste des immeubles
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Vile</th>
+            <th>N° etage</th>
+            <th>N° Appartement</th>
+            <th>Editer</th>
+            <th>Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let imm of pageImmeuble?.content">
+            <td>{{ imm.id }}</td>
+            <td>{{ imm.nom }}</td>
+            <td>{{ imm.vile }}</td>
+            <td>{{ imm.nombreEtages }}</td>
+            <td>{{ imm.nombreAppartements }}</td>
+            <td>
+              <a mat-raised-button color="primary" (click)="toEdit(imm.id)">
+                <mat-icon>edit</mat-icon>
+              </a>
+            </td>
+            <td>
+              <a
+                mat-raised-button
+                color="primary"
+                (click)="onDeleteImmeuble(imm)"
+              >
+                <mat-icon>delete</mat-icon>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <li
+            *ngFor="let p of pages; let i = index"
+            class="nav-item"
+            [ngClass]="{ active: i == curentPage }"
+            class="clickable"
+          >
+            <!--  -->
+            <a class="nav-link link" (click)="goToPage(i)">
+              {{ i + 1 }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

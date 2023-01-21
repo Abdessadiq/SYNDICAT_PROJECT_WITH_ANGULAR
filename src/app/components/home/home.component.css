@@ -1,0 +1,63 @@
+.home {
+  display: flex;
+  background: url("/assets/home.png") no-repeat center;
+  height: 99vh;
+  color: #fff;
+  min-height: 500px;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.home .max-width {
+  margin: auto 0 auto 40px;
+}
+.home .home-content .text-1 {
+  margin: 40px;
+  font-size: 27px;
+}
+.home .home-content .text-2 {
+  margin-top: 20px;
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: 35px;
+  margin-bottom: 10px;
+}
+
+.home .home-content a {
+  display: inline-block;
+  background: #7451eb;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  margin-left: 40px;
+  border-radius: 6px;
+  border: 2px solid #7451eb;
+  transition: all 0.3s ease;
+}
+.home .home-content a:hover {
+  color: #fff;
+  background: none;
+}
+/* section {
+  padding: 100px 0;
+} */
+
+@media (max-width: 519px) {
+  .home .home-content .text-1 {
+    margin: 0;
+
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+  .home .home-content .text-2 {
+    font-size: 45px;
+    padding: 10px -10px;
+  }
+
+  .home .home-content a {
+    font-size: 23px;
+    padding: 10px 30px;
+  }
+}

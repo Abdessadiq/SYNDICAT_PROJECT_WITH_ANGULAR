@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="container mt text-center"></div>
+        <h1 class="text-center fs-1">Ajouter Un Reglement</h1>
+        <hr class="bg-primary" />
+
+        <!-- Creating Form -->
+        <form #f="ngForm" class="text-center">
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">numero Article </mat-label>
+            <input
+              matInput
+              class="fs-5"
+              name="numeroArticle"
+              placeholder="Nom de l'immeuble"
+              type="text"
+              required
+              [(ngModel)]="reglement.numeroArticle"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Contenu</mat-label>
+            <textarea
+              class="fs-5"
+              name="contenuArticle"
+              matInput
+              placeholder="Contenu"
+              type="text"
+              required
+              [(ngModel)]="reglement.contenuArticle"
+            >
+            </textarea>
+          </mat-form-field>
+
+          <div class="container text-center mt">
+            <button
+              mat-raised-button
+              class="fs-5 full-width-btn up"
+              type="submits"
+              color="primary"
+              (click)="onSaveReglement()"
+            >
+              Ajouter
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

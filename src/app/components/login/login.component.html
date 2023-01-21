@@ -1,0 +1,86 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="container mt text-center">
+          <img
+            src="/assets/ps.png"
+            class="img-fluit"
+            style="width: 100px"
+            alt=""
+          />
+        </div>
+        <h1 class="text-center">Se Connecter</h1>
+
+        <!-- Creating Form -->
+        <form #f="ngForm" (ngSubmit)="onSubmit()" class="text-center">
+          <span class="text-center text-danger mt"> {{ message }} </span>
+          <br />
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="fs-5">E-mail</mat-label>
+            <input
+              matInput
+              class="fs-5"
+              name="email"
+              placeholder="Votre E-mail"
+              type="email"
+              [(ngModel)]="user.email"
+              required
+              #email="ngModel"
+              [class.is-invalid]="email.invalid && email.touched"
+            />
+
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <div *ngIf="email.errors && email.invalid && email.touched">
+              <small class="text-danger" *ngIf="email.errors.required">
+                Le champ email est obligatoire
+              </small>
+              <small class="text-danger" *ngIf="email.errors.pattern">
+                Entrer un E-mail validé
+              </small>
+            </div> -->
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="fs-5">Mot De Passe</mat-label>
+            <input
+              class="fs-5"
+              name="password"
+              matInput
+              placeholder="Le Mot De Passe"
+              type="password"
+              [(ngModel)]="user.password"
+              required
+            />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <br />
+          <!-- <mat-checkbox class="fs-4 full-width ml">
+            Se Sevenir de moi ?
+          </mat-checkbox> -->
+
+          <div class="container text-center mt">
+            <button
+              mat-raised-button
+              class="fs-5 full-width-btn"
+              type="submits"
+              color="primary"
+              [disabled]="!f.valid"
+            >
+              Connexion
+            </button>
+          </div>
+          <div class="container text-center mt">
+            <button
+              mat-raised-button
+              class="f-s full-width-btn"
+              routerLink="/register"
+            >
+              Créer un compte
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

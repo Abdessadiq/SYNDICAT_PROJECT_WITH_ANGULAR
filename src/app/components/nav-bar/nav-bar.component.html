@@ -1,0 +1,77 @@
+<nav class="navbar bs navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-3 text-black logo" routerLink="/">
+      SyndicMaroc.
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span (click)="toggleMenu()" class="navbar-toggler-icon">
+        <i class="material-icons bar"> {{ isMenuOpen ? "close" : "menu" }} </i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active fs-5 text-black pc"
+            aria-current="page"
+            routerLink="/"
+          >
+            Accueil
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!(isAdmin() || isUser())">
+          <a class="nav-link fs-5 text-black" href="#" routerLink="/login">
+            Se Connecter
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!(isAdmin() || isUser())">
+          <a class="nav-link fs-5 text-black" routerLink="/register">
+            S'inscire
+          </a>
+        </li>
+        <!-- *ngIf="isAdmin()"" -->
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link fs-5 text-black" routerLink="/dashboard">
+            Tableu de bord
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="isAdmin() || isUser()">
+          <a (click)="onLogout()" class="nav-link fs-5 pc text-black">
+            Déconnecter
+          </a>
+        </li>
+      </ul>
+
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Chercher"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Chercher</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- <mat-toolbar color="primary" class="nav" id="my-first">
+  <div><a class="lien logo" routerLink=""> SyndicMaroc. </a></div>
+  <div class="burger" (click)="toggleMenu()">
+    <i class="material-icons"> {{ isMenuOpen ? "menu" : "close" }}</i>
+  </div>
+  <div class="menu" [class.is-open]="isMenuOpen">
+    <a class="lien menu-item" routerLink=""> Accueil</a>
+    <a class="lien" routerLink="/login">Se Connecter</a>
+    <a class="lien" routerLink="/register"> S'inscrire</a>
+  </div>
+</mat-toolbar> -->

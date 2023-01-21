@@ -1,0 +1,51 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Tableau de bord</mat-toolbar>
+    <mat-nav-list class="list-item">
+      <a mat-list-item routerLink="" class="item">
+        <mat-icon>home</mat-icon> &nbsp; Accueil</a
+      >
+      <a mat-list-item routerLink="dashboard/g-immeuble" class="item">
+        <mat-icon>account_balance</mat-icon> &nbsp; Immeubles
+      </a>
+      <a mat-list-item routerLink="dashboard/g-appartement" class="item">
+        <mat-icon>domain</mat-icon> &nbsp; Appartements
+      </a>
+      <a mat-list-item routerLink="dashboard/g-utilisateur" class="item">
+        <mat-icon>face</mat-icon> &nbsp; Utilisateurs
+      </a>
+      <a mat-list-item routerLink="dashboard/g-caisse" class="item">
+        <mat-icon> local_atm</mat-icon>&nbsp; La Caisse
+      </a>
+      <a mat-list-item routerLink="dashboard/g-annonce" class="item">
+        <mat-icon>sms_failed</mat-icon> &nbsp; Les Annonces
+      </a>
+      <a mat-list-item routerLink="dashboard/g-reglement" class="item">
+        <mat-icon>new_releases</mat-icon> &nbsp; Réglements
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="text-center">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="fs pl">Gestion Administrative </span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

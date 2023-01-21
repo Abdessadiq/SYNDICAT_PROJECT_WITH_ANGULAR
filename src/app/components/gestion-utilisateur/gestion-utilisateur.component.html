@@ -1,0 +1,89 @@
+<div class="container spacer">
+  <div class="card border-primary w-c">
+    <nav class="navbar bg-light">
+      <form class="container-fluid">
+        <div class="input-group">
+          <button
+            mat-raised-button
+            class="button br"
+            routerLink="/ajouterUtilisateur"
+          >
+            Ajouter un Utilisateur
+          </button>
+          <input
+            name="motCle"
+            type="text"
+            class="form-control"
+            placeholder="Le nom de L'utilisateur"
+            aria-describedby="basic-addon1"
+            [(ngModel)]="motCle"
+          />
+          <a class="td point" (click)="search()">
+            <span class="input-group-text" id="basic-addon1">Chercher</span>
+          </a>
+        </div>
+      </form>
+    </nav>
+    <div class="card card-header" class="fs-2 text-white bg-primary head">
+      Liste des Utilisateurs
+    </div>
+    <div class="card-body media">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">immeuble</th>
+            <th scope="col">N° Appartement</th>
+            <th scope="col">Editer</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of pageUser?.content">
+            <td scope="row">{{ user.id }}</td>
+            <td>{{ user.nom }}</td>
+            <td>{{ user.prenom }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.tel }}</td>
+            <td>{{ user.immeuble.nom }}</td>
+            <td>{{ user.appartement.numero }}</td>
+
+            <td>
+              <a mat-raised-button color="primary" (click)="toEdit(user.id)">
+                <mat-icon>edit</mat-icon>
+              </a>
+            </td>
+            <td>
+              <a
+                mat-raised-button
+                color="primary"
+                (click)="onDeleteUtilisateur(user)"
+              >
+                <mat-icon>delete</mat-icon>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <li
+            *ngFor="let p of pages; let i = index"
+            class="nav-item"
+            [ngClass]="{ active: i == curentPage }"
+            class="clickable"
+          >
+            <!--  -->
+            <a class="nav-link link" (click)="goToPage(i)">
+              {{ i + 1 }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

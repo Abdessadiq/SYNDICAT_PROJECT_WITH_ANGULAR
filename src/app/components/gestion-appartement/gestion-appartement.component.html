@@ -1,0 +1,66 @@
+<div class="container spacer">
+  <div class="card border-primary">
+    <nav class="navbar bg-light">
+      <form class="container-fluid">
+        <div class="input-group">
+          <button
+            mat-raised-button
+            class="button br"
+            routerLink="/ajouterAppartement"
+          >
+            Ajouter un Appartement
+          </button>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Le nom de L'immeuble"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+          <a routerLink="" class="td">
+            <span class="input-group-text" id="basic-addon1">Chercher</span>
+          </a>
+        </div>
+      </form>
+    </nav>
+    <div class="card card-header" class="fs-2 text-white bg-primary head">
+      Liste des Appartement
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Numero</th>
+            <th>N° Etage</th>
+            <th>Immeuble</th>
+            <th>Editer</th>
+            <th>Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let app of appart">
+            <td>{{ app.id }}</td>
+            <td>{{ app.numero }}</td>
+            <td>{{ app.numeroEtage }}</td>
+            <td>{{ app.immeuble.nom }}</td>
+            <td>
+              <a mat-raised-button color="primary" (click)="toEdit(app.id)">
+                <mat-icon>edit</mat-icon>
+              </a>
+            </td>
+            <td>
+              <a
+                mat-raised-button
+                color="primary"
+                (click)="onDeleteApaprtement(app)"
+              >
+                <mat-icon>delete</mat-icon>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

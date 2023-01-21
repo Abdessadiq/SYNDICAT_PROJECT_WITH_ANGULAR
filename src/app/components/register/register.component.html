@@ -1,0 +1,191 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container mt text-center">
+          <img
+            src="/assets/ps.png"
+            class="img-fluit"
+            style="width: 100px"
+            alt=""
+          />
+        </div>
+        <h1 class="text-center">Créer un compte</h1>
+
+        <!-- Creating Form -->
+        <form class="text-center" action="">
+          <mat-form-field class="width mr" appearance="outline">
+            <mat-label class="f-s">Nom</mat-label>
+            <input
+              type="text"
+              matInput
+              class="f-s"
+              placeholder="Votre Nom"
+              required
+              name="nom"
+              [(ngModel)]="user.nom"
+            />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="width" appearance="outline">
+            <mat-label class="f-s">Prénom</mat-label>
+            <input
+              class="f-s"
+              matInput
+              placeholder="Votre prénom"
+              type="text"
+              required
+              name="prenom"
+              [(ngModel)]="user.prenom"
+            />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="width mr" appearance="outline">
+            <mat-label class="f-s">Date de Naissance</mat-label>
+            <input
+              matInput
+              class="f-s"
+              type="date"
+              required
+              name="dateNaissance"
+              [(ngModel)]="user.dateNaissance"
+            />
+          </mat-form-field>
+          <mat-form-field class="width" appearance="outline">
+            <mat-label class="f-s">E-mail</mat-label>
+            <input
+              class="f-s"
+              matInput
+              placeholder="exemple@gmail.com"
+              type="email"
+              required
+              name="email"
+              [(ngModel)]="user.email"
+            />
+            <mat-icon matSuffix> email</mat-icon>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="width mr" appearance="outline">
+            <mat-label class="f-s">Mot de passe</mat-label>
+            <input
+              matInput
+              class="f-s"
+              placeholder="mot de passe"
+              type="password"
+              required
+              name="password"
+              [(ngModel)]="user.password"
+            />
+            <mat-icon matSuffix> vpn_key</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="width" appearance="outline">
+            <mat-label class="f-s">Confirmer Votre mot de passe</mat-label>
+            <input
+              class="f-s"
+              matInput
+              placeholder="confirmation mot de passe"
+              type="password"
+              required
+            />
+            <mat-icon matSuffix> vpn_key</mat-icon>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="width mr" appearance="outline">
+            <mat-label class="f-s">Téléphone</mat-label>
+            <!-- <span class="f-s" matPrefix>+212 &nbsp;</span> -->
+            <input
+              class="f-s"
+              type="tel"
+              matInput
+              placeholder="0655555123"
+              required
+              name="tel"
+              [(ngModel)]="user.tel"
+            />
+            <mat-icon matSuffix> phone</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="width" appearance="outline">
+            <mat-label class="f-s">Adresse</mat-label>
+            <input
+              class="f-s"
+              matInput
+              placeholder="Votre Adresse"
+              type="text"
+              required
+              name="adresse"
+              [(ngModel)]="user.adresse"
+            />
+            <mat-icon matSuffix> location_on</mat-icon>
+          </mat-form-field>
+          <br />
+
+          <!-- <mat-label>Situation Familiale </mat-label> -->
+          <div class="container full-width rb">
+            <mat-radio-group
+              class="full-width"
+              appearance="outline"
+              aria-label="Select an option"
+              name="situationFamiliale"
+              [(ngModel)]="user.situationFamiliale"
+            >
+              <span class="mr tl f-s">Situation Familiale :</span>
+              <br class="rl" />
+              <mat-radio-button class="mr f-s marg-t" value="MARIE">
+                Marié(e)
+              </mat-radio-button>
+              <mat-radio-button class="mr f-s" value="DIVORCE">
+                Divorvé(e)
+              </mat-radio-button>
+              <mat-radio-button class="mr f-s" checked value="CELIBATAIRE">
+                Célibataire
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <br />
+          <mat-form-field class="width mr" appearance="outline">
+            <mat-label class="f-s">Date de D'entrée</mat-label>
+            <input
+              matInput
+              class="f-s"
+              type="date"
+              required
+              name="dateDebut"
+              [(ngModel)]="user.dateDebut"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="width" appearance="outline">
+            <mat-label class="f-s"> Type Utilisateur </mat-label>
+            <mat-select
+              name="typeUtilisateur"
+              [(ngModel)]="user.typeUtilisateur"
+            >
+              <mat-option class="f-s" selected value="RESIDANT">
+                Résidant
+              </mat-option>
+              <mat-option class="f-s" value="SYNDIC_RESIDANT">
+                Syndic Résidant
+              </mat-option>
+              <mat-option class="f-s" value="SYNDIC_EXTERNE">
+                Syndic Externe
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="container text-center mt">
+            <button
+              mat-raised-button
+              class="fs-5 full-width-btn"
+              type="submit"
+              color="accent"
+              (click)="onRegister()"
+            >
+              S'inscrire
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

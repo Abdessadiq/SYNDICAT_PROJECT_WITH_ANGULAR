@@ -1,0 +1,16 @@
+.button {
+  margin-right: 20px;
+  font-size: medium;
+}
+
+@media (max-width: 1247) {
+  .w-c {
+    width: auto;
+    font-size: 0.6em;
+    font-weight: 300;
+  }
+  .media {
+    font-size: 0.3em;
+    font-weight: 300;
+  }
+}

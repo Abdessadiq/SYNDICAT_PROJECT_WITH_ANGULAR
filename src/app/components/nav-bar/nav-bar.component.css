@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+.pc {
+  cursor: pointer;
+}
+.nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
+.lien {
+  padding-right: 1rem;
+  color: white;
+  text-decoration: none;
+}
+/* .bs {
+  box-shadow: 5px 10px 5px #f3f1f1;
+} */
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+.bar {
+  font-family: "Material Icons";
+}
+.logo {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+}

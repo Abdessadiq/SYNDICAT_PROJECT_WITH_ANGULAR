@@ -1,0 +1,16 @@
+
+/* media Query */
+@media (max-width: 990px) {
+  .full-width {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 30px;
+  }
+  .full-width-btn {
+    height: 45px;
+  }
+  .f-s {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+}

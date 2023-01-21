@@ -1,0 +1,89 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="container mt text-center"></div>
+        <h1 class="text-center fs-1">Modifier Caisse</h1>
+        <hr class="bg-primary" />
+
+        <!-- Creating Form -->
+        <form #f="ngForm" class="text-center">
+          <mat-form-field class="full-width up" appearance="outline" required>
+            <mat-label class="fs-5">{{ caisse.immeuble.nom }} </mat-label>
+            <mat-select [(ngModel)]="caisse.immeuble" name="immeuble">
+              <mat-option *ngFor="let imm of immeuble" [value]="imm">
+                {{ imm.nom }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="full-width up" appearance="outline" required>
+            <mat-label class="fs-5"> {{ caisse.utilisateur.nom }} </mat-label>
+            <mat-select [(ngModel)]="caisse.utilisateur" name="user">
+              <mat-option *ngFor="let u of user" [value]="u">
+                {{ u.nom }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="f-s"> Type </mat-label>
+            <mat-select [(ngModel)]="caisse.type" name="type">
+              <mat-option class="f-s" selected value="CHARGE">
+                Charge
+              </mat-option>
+              <mat-option class="f-s" value="ENTREE"> Entrée </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="f-s">{{ caisse.detailType }}</mat-label>
+            <mat-select [(ngModel)]="caisse.detailType" name="detailType">
+              <mat-option class="f-s" selected value="COTISATION">
+                Cotisation
+              </mat-option>
+              <mat-option class="f-s" value="TRAVEAUX"> Traveaux </mat-option>
+              <mat-option class="f-s" value="MENAGE"> Ménage </mat-option>
+              <mat-option class="f-s" value="DON"> Don </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Date </mat-label>
+            <input
+              matInput
+              class="fs-6"
+              name="date"
+              type="date"
+              [(ngModel)]="caisse.date"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Somme</mat-label>
+            <input
+              class="fs-6"
+              name="somme"
+              matInput
+              placeholder="Somme En DH"
+              type="text"
+              [(ngModel)]="caisse.somme"
+              required
+            />
+          </mat-form-field>
+
+          <div class="container text-center mt">
+            <button
+              mat-raised-button
+              class="fs-5 full-width-btn up"
+              type="submits"
+              color="primary"
+              [disabled]="!f.valid"
+              (click)="onUpdateCaisse()"
+            >
+              Modifier
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

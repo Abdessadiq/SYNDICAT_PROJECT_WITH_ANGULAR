@@ -1,0 +1,87 @@
+<div class="container spacer">
+  <div class="card border-primary w-c">
+    <nav class="navbar bg-light">
+      <form class="container-fluid">
+        <div class="input-group">
+          <button
+            mat-raised-button
+            class="button br"
+            routerLink="/ajouterAnnonce"
+          >
+            Ajouter Une Annonce
+          </button>
+          <input
+            name="motCle"
+            type="text"
+            class="form-control"
+            placeholder="Le sujet de l'annonce"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            [(ngModel)]="motCle"
+          />
+          <a class="td point" (click)="search()">
+            <span class="input-group-text" id="basic-addon1">Chercher</span>
+          </a>
+        </div>
+      </form>
+    </nav>
+    <div class="card card-header" class="fs-2 text-white bg-primary head">
+      Liste des Annonces
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Sujet</th>
+            <th>Contenu</th>
+            <th>Utilisateur</th>
+            <th>Immeuble</th>
+
+            <th>Editer</th>
+            <th>Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let annonce of pageAnnonce?.content">
+            <td>{{ annonce.id }}</td>
+            <td>{{ annonce.sujet }}</td>
+            <td>{{ annonce.contenu }}</td>
+            <td>{{ annonce.utilisateur.nom }}</td>
+            <td>{{ annonce.immeuble.nom }}</td>
+
+            <td>
+              <a mat-raised-button color="primary" (click)="toEdit(annonce.id)">
+                <mat-icon>edit</mat-icon>
+              </a>
+            </td>
+            <td>
+              <a
+                mat-raised-button
+                color="primary"
+                (click)="onDeleteAnnonce(annonce)"
+              >
+                <mat-icon>delete</mat-icon>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <li
+            *ngFor="let p of pages; let i = index"
+            class="nav-item"
+            [ngClass]="{ active: i == curentPage }"
+            class="clickable"
+          >
+            <!--  -->
+            <a class="nav-link link" (click)="goToPage(i)">
+              {{ i + 1 }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

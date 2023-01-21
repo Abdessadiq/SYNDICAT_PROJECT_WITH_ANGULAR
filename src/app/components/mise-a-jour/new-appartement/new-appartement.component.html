@@ -1,0 +1,59 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="container mt text-center"></div>
+        <h1 class="text-center fs-1">Ajouter Un Appartement</h1>
+        <hr class="bg-primary" />
+
+        <!-- Creating Form -->
+        <form #f="ngForm" class="text-center">
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Numero </mat-label>
+            <input
+              matInput
+              class="fs-6"
+              name="numero"
+              placeholder="Nom de l'appartement"
+              type="number"
+              [(ngModel)]="appart.numero"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Numero Etage</mat-label>
+            <input
+              class="fs-6"
+              name="numeroEtage"
+              matInput
+              placeholder="Numero Etage"
+              type="number"
+              [(ngModel)]="appart.numeroEtage"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline" required>
+            <mat-label class="fs-5">Selectionner un Immeuble</mat-label>
+            <mat-select [(ngModel)]="appart.immeuble" name="immeuble">
+              <mat-option *ngFor="let imm of immeuble" [value]="imm">
+                {{ imm.nom }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="container text-center mt">
+            <button
+              mat-raised-button
+              class="fs-5 full-width-btn up"
+              type="submits"
+              color="primary"
+              [disabled]="!f.valid"
+              (click)="onSaveAppartement()"
+            >
+              Ajouter
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

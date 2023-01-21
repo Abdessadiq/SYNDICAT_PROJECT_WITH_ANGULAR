@@ -1,0 +1,37 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+.mr {
+  margin-right: 30px;
+}
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.fs {
+  font-size: 1.9em;
+  font-weight: 600;
+  text-decoration: none;
+}
+.pl {
+  padding-left: 100px;
+}
+@media (max-width: 769px) {
+  .pl {
+    padding-left: 10px;
+  }
+  .fs {
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}

@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+}
+
+.f-s {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+}
+.td {
+  text-decoration: none;
+}
+.point {
+  cursor: pointer;
+}
+.full-width {
+  width: 80%;
+  /* border: 1px solid #fff; */
+  border-radius: 30px;
+}
+.full-width-btn {
+  width: 80%;
+  height: 45px;
+  margin-left: 15px;
+}
+.mt {
+  margin-top: 20px;
+}
+
+/* .bgc {
+} */
+* {
+  font-family: "Poppins", sans-serif;
+}
+.text-center {
+  text-align: center;
+}
+
+/* style dashboard */
+.list-item {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.cr {
+  color: #fff;
+}
+.item:hover {
+  color: blue;
+  background-color: chartreuse;
+}
+/* Style Affichages de Listes des données */
+
+.button {
+  margin-right: 20px;
+  font-size: medium;
+}
+.br {
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+.fs-2.text-white.bg-primary {
+  margin: 15px;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  background-color: #19adfd;
+}
+.fs-table {
+  font-size: medium;
+  font-weight: 500;
+}
+
+.full-width.up {
+  width: 95%;
+  border: 1px solid #fff;
+  border-radius: 30px;
+}
+.full-width-btn.up {
+  width: 95%;
+  height: 45px;
+  margin-left: 15px;
+}
+
+@media (max-width: 990px) {
+  .full-width {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 30px;
+  }
+  .full-width-btn {
+    height: 45px;
+  }
+  .f-s {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+}
+/* @media (max-width: 1210px) {
+  .w-c {
+    width: auto;
+    font-size: 0.6em;
+    font-weight: 300;
+  }
+} */
+/* ------------------------ */

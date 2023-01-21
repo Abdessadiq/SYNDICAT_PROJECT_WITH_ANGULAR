@@ -1,0 +1,74 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="container mt text-center"></div>
+        <h1 class="text-center fs-1">Ajouter Un immeuble</h1>
+        <hr class="bg-primary" />
+
+        <!-- Creating Form -->
+        <form #f="ngForm" class="text-center">
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Nom </mat-label>
+            <input
+              matInput
+              class="fs-5"
+              name="nom"
+              placeholder="Nom de l'immeuble"
+              type="text"
+              required
+              [(ngModel)]="immeuble.nom"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Vile</mat-label>
+            <input
+              class="fs-5"
+              name="vile"
+              matInput
+              placeholder="La Vile"
+              type="text"
+              required
+              [(ngModel)]="immeuble.vile"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Nombres des Etages</mat-label>
+            <input
+              class="fs-5"
+              name="nombreEtage"
+              matInput
+              placeholder="Le nombre de'Etage"
+              type="number"
+              [(ngModel)]="immeuble.nombreEtages"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width up" appearance="outline">
+            <mat-label class="fs-5">Nombre d'Appartement</mat-label>
+            <input
+              class="fs-5"
+              name="nombreAppartement"
+              matInput
+              placeholder="Le nombre de'Appartement"
+              type="number"
+              [(ngModel)]="immeuble.nombreAppartements"
+            />
+          </mat-form-field>
+
+          <div class="container text-center mt">
+            <button
+              mat-raised-button
+              class="fs-5 full-width-btn up"
+              type="submits"
+              color="primary"
+              (click)="onSaveImmeuble()"
+              [disabled]="!f.valid"
+            >
+              Ajouter
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
